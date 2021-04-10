@@ -3,8 +3,13 @@ Repository untuk pengerjaan tugas Pengembangan Aplikasi Piranti Bergerak Team 6
 
 Berikut merupakan file readme dari kelompok 6 PAPB
 
+## Cara Menjalankan Aplikasi
+```
+git clone 
+```
+
 ## Ide
-List Cara Membuat suatu Makanan atau Minuman
+Menampilkan list makanan atau minuman dan cara membuatnya
 
 ## Latar Belakang
 Banyak orang, khususnya pada masa pandemi ini, mereka menginginkan membuat makanan mereka sendiri baik itu untuk hobi, ingin hidup yang lebih sehat atau ingin memulai bisnis
@@ -14,7 +19,7 @@ mereka
 Menampilkan tahapan cara membuat makanan atau minuman yang diinginkan
 
 ## Konsep
-Aplikasi merupakan aplikasi native android yang menggunakan bahasa kotlin sebagai backend. Frontend aplikasi menggunakan 1 activity dengan 3 fragment yang terpasang.
+Aplikasi merupakan aplikasi native android yang menggunakan bahasa kotlin sebagai backend dan [API](https://www.themealdb.com/api.php) makanan dan cara membuatnya. Frontend aplikasi menggunakan 1 activity dengan 3 fragment yang terpasang.
 
 ### Fragment tersebut terdiri dari :
 - Home (Menampilkan Category) --> Terdiri dari Recycle View bernama "place_card"
@@ -23,29 +28,28 @@ Aplikasi merupakan aplikasi native android yang menggunakan bahasa kotlin sebaga
 
 ### Recycle View tersebut terdiri dari :
 - place_card --> Terdiri dari gambar dan nama category
-- food_card --> Terdiri dari gambar dan nama makanan/minuman
+- food_card --> Terdiri dari gambar dan nama makanan
 
 ## Flow
-Home > pilih category > Menu > pilih makanan > Detail
+Aplikasi menampilkan **Home** > user memilih category > Aplikasi menampilkan **Menu** > user memilih makanan > Aplikasi menampilkan **Detail**
 
 ## Batasan Aplikasi
 Aplikasi tidak memberikan list alat dan bahan
 Gambar pada aplikasi kemungkinan memiliki ratio yang tidak normal (stretched / squashed)
 Tidak adanya fitur login
 
-
 ## Fitur
 ### Home
-  - List Gambar kategori makanan
-  - List Kategori makanan
+  - Menampilkan List Gambar kategori makanan
+  - Menampilkan List Kategori makanan
 
 ### Menu
-  - List Gambar makanan
-  - List Nama makanan
+  - Menampilkan List Gambar makanan
+  - Menampilkan List Nama makanan
 
 ### Food Detail
-  - Gambar
-  - Informasi :
+  - Menampilkan Gambar
+  - Menampilkan Informasi :
     - Nama
     - Detail Isi
     - Cara Memasak
