@@ -72,7 +72,7 @@ onDestroy(), merupakan lifecycle ketika fragmen atau activity dihancurkan dari m
 6. onResume(): lifecycle dimana sebuah fragment yang ditahan prosesnya atau sedang dalam lifecycle onPause(), dijalankan kembali karena suatu event
 
 #### Activities
-1. onDestroy(): lifecycle ketika aplikasi di tutup dan diberhentikan prosesnya.
+7. onDestroy(): lifecycle ketika aplikasi di tutup dan diberhentikan prosesnya.
 
 
 ## Arsitektur
