@@ -3,65 +3,61 @@ Repository untuk pengerjaan tugas Pengembangan Aplikasi Piranti Bergerak Team 6
 
 Berikut merupakan file readme dari kelompok 6 PAPB
 
-Ide : Pemesanan Makanan
+## Ide
+List Cara Membuat suatu Makanan atau Minuman
 
-Latar Belakang
-Lamanya antrian saat memesan makanan menyebabkan banyak waktu terbuang,  sementara banyak karyawan, pelajar, dan pelanggan lain yang memiliki waktu terbatas untuk makan.
+## Latar Belakang
+Banyak orang, khususnya pada masa pandemi ini, mereka menginginkan membuat makanan mereka sendiri baik itu untuk hobi, ingin hidup yang lebih sehat atau ingin memulai bisnis
+mereka
 
-Tujuan
-Untuk mempercepat pemesanan makanan tanpa harus antri. Jadi pembeli dapat langsung mengambil pesanan setibanya di tempat makan.
+## Tujuan
+Menampilkan tahapan cara membuat makanan atau minuman yang diinginkan
 
-Konsep
-Terdapat 2 aplikasi, pembeli dan penjual.
-Aplikasi yang dibuat berfungsi untuk pembeli, sementara penjual hanya sebatas diceritakan.
+## Konsep
+Aplikasi merupakan aplikasi native android yang menggunakan bahasa kotlin sebagai backend. Frontend aplikasi menggunakan 1 activity dengan 3 fragment yang terpasang.
 
-Flow
-home > pilih makanan > lihat info makanan > masukkan ke keranjang
-Home > pilih tempat makan > pilih menu makanan > lihat info makanan > masukkan ke keranjang
-Lihat keranjang > hapus makanan terpilih > isi keranjang berkurang
-Menu makanan > kurangi jumlah pesanan
+### Fragment tersebut terdiri dari :
+- Home (Menampilkan Category) --> Terdiri dari Recycle View bernama "place_card"
+- Menu (Menampilkan makanan sesuai kategori) --> Terdiri dari Recycle View bernama "food_card"
+- Detail (Menampilkan cara membuat makanan) --> Terdiri dari gambar dan deskripsi cara membuatnya
 
-Batasan Aplikasi
-Aplikasi hanya menyediakan informasi tempat makan, informasi makanan yang tersedia, dan pemesanan makanan.
-Pembayaran dilakukan di tempat makan.
-Diskon dan semacamnya merupakan kewenangan pemilik tempat makan, sehingga dilaksanakan saat pembayaran di tempat makan.
-Aplikasi baru sebatas untuk pembeli. Kegiatan yang berada di ranah pemilik tempat makan seperti diskon dan sebagainya dilakukan di lokasi. (bukan menjadi tanggung jawab kelompok 6)
+### Recycle View tersebut terdiri dari :
+- place_card --> Terdiri dari gambar dan nama category
+- food_card --> Terdiri dari gambar dan nama makanan/minuman
 
-Fitur
-- Home
-  - Search Field : mencari nama makanan atau tempat makan
-  - List tempat makan
-  - List makanan
+## Flow
+Home > pilih category > Menu > pilih makanan > Detail
 
-- Info Tempat Makan
-  - Informasi :
-    > Nama
-    > Lokasi
-    > Jam Operasional
-    > Nomor telepon/wa
-    > rating
-  - List pilihan makanan yang ada >> masuk ke page info makanan
-    > Gambar
-    > Nama
-    > Harga
-    > Rating
+## Batasan Aplikasi
+Aplikasi tidak memberikan list alat dan bahan
+Gambar pada aplikasi kemungkinan memiliki ratio yang tidak normal (stretched / squashed)
+Tidak adanya fitur login
 
-- Info Makanan
+
+## Fitur
+### Home
+  - List Gambar kategori makanan
+  - List Kategori makanan
+
+### Menu
+  - List Gambar makanan
+  - List Nama makanan
+
+### Food Detail
   - Gambar
   - Informasi :
-    > Nama
-    > Detail Isi
-    > Harga
-    > Rating
-  - Tombol masukan +  >> tambah ke keranjang
-  - Tombol masukan -  >> hapus dari keranjang
+    - Nama
+    - Detail Isi
+    - Cara Memasak
 
-- Keranjang Pemesanan (coming soon)
-  - List makanan dan total pesanan per makanan
-  - Total harga
-  
-- Profile
-  - Foto
-  - Nama
-  - Email
-  - Tombol logout
+## Lifecycle
+
+
+## Arsitektur
+Arsitektur yang dipilih adalah Model-ViewModel-Model (MVVM)
+Kami memilih arsitektur ini karena:
+1. Arsitektur ini paling banyak dipakai di kalangan developer android
+2. Arsitektur ini memiliki banyak turtorial di internet
+3. Arsitektur ini memiliki struktur yang mudah dimengerti
+
+Arsitektur MVVM sudah kami masukan/kategorikan dengan file-file penamaan sendiri-sendiri, folder dengan nama **View** adalah bagan view, folder dengan nama **ViewModel** adalah bagan viewmodel, folder dengan nama **Model** merupakan bagan model dari aplikasi.
