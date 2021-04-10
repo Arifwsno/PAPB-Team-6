@@ -34,9 +34,9 @@ Aplikasi merupakan aplikasi native android yang menggunakan bahasa kotlin sebaga
 Aplikasi menampilkan **Home** > user memilih category > Aplikasi menampilkan **Menu** > user memilih makanan > Aplikasi menampilkan **Detail**
 
 ### Batasan Aplikasi
-Aplikasi tidak memberikan list alat dan bahan
-Gambar pada aplikasi kemungkinan memiliki ratio yang tidak normal (stretched / squashed)
-Tidak adanya fitur login
+- Aplikasi tidak memberikan list alat dan bahan
+- Gambar pada aplikasi kemungkinan memiliki ratio yang tidak normal (stretched / squashed)
+- Tidak adanya fitur login
 
 ## Fitur
 ### Home
