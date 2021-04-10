@@ -28,18 +28,6 @@ Diskon dan semacamnya merupakan kewenangan pemilik tempat makan, sehingga dilaks
 Aplikasi baru sebatas untuk pembeli. Kegiatan yang berada di ranah pemilik tempat makan seperti diskon dan sebagainya dilakukan di lokasi. (bukan menjadi tanggung jawab kelompok 6)
 
 Fitur
-- Login
-  - Email
-  - Password
-  - Tombol Login
-  - Link Sign Up
-
-- Sign Up
-  - Nama lengkap
-  - Email
-  - Password
-  - Tombol Sign Up
-
 - Home
   - Search Field : mencari nama makanan atau tempat makan
   - List tempat makan
