@@ -13,16 +13,16 @@ import retrofit2.http.Query
 class ApiService {
     private val retrofit = Retrofit.Builder()
         .baseUrl(Constant.BASE_URL)
-    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-    .addConverterFactory(GsonConverterFactory.create())
-    .build()
-    .create(MealsApi::class.java)
+        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
+        .create(MealsApi::class.java)
 
     fun getListCategories(): Observable<ListCategoryResponse> {
         return retrofit.getListCategories()
     }
 
-    fun getListMeal(c: String): Observable<ListMealResponse> {
+    fun getListMeal(c: String?): Observable<ListMealResponse> {
         return retrofit.getListMeal(c)
     }
 
