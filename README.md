@@ -3,7 +3,7 @@ Repository untuk pengerjaan tugas Pengembangan Aplikasi Piranti Bergerak Team 6
 
 Berikut merupakan file readme dari kelompok 6 PAPB
 
-### Cara Menjalankan Aplikasi
+## Cara Menjalankan Aplikasi
 ```
 git clone https://github.com/Arifwsno/PAPB-Team-6.git
 ```
@@ -15,18 +15,18 @@ Menampilkan list makanan atau minuman dan cara membuatnya
 Banyak orang, khususnya pada masa pandemi ini, mereka menginginkan membuat makanan mereka sendiri baik itu untuk hobi, ingin hidup yang lebih sehat atau ingin memulai bisnis
 mereka
 
-### Tujuan
+## Tujuan
 Menampilkan tahapan cara membuat makanan atau minuman yang diinginkan
 
-### Konsep
+## Konsep
 Aplikasi merupakan aplikasi native android yang menggunakan bahasa kotlin sebagai backend dan [API](https://www.themealdb.com/api.php) makanan dan cara membuatnya. Frontend aplikasi menggunakan 1 activity dengan 3 fragment yang terpasang.
 
-#### Fragment tersebut terdiri dari :
+### Fragment tersebut terdiri dari :
 - Home (Menampilkan Category) --> Terdiri dari Recycle View bernama "place_card"
 - Menu (Menampilkan makanan sesuai kategori) --> Terdiri dari Recycle View bernama "food_card"
 - Detail (Menampilkan cara membuat makanan) --> Terdiri dari gambar dan deskripsi cara membuatnya
 
-#### Recycle View tersebut terdiri dari :
+### Recycle View tersebut terdiri dari :
 - place_card --> Terdiri dari gambar dan nama category
 - food_card --> Terdiri dari gambar dan nama makanan
 
@@ -38,38 +38,50 @@ Aplikasi tidak memberikan list alat dan bahan
 Gambar pada aplikasi kemungkinan memiliki ratio yang tidak normal (stretched / squashed)
 Tidak adanya fitur login
 
-### Fitur
-#### Home
+## Fitur
+### Home
   - Menampilkan List Gambar kategori makanan
   - Menampilkan List Kategori makanan
 
-#### Menu
+### Menu
   - Menampilkan List Gambar makanan
   - Menampilkan List Nama makanan
 
-#### Food Detail
+### Food Detail
   - Menampilkan Gambar
   - Menampilkan Informasi :
     - Nama
     - Detail Isi
     - Cara Memasak
 
-### Lifecycle
-Terdapat 2 lifecycle yaitu, lifecycle Activities dan Fragment
-Activities
-1. onCreate(): 
+## Lifecycle
 
-Fragment
-2. onAttach():
-3. onCreateView():
-4. onViewCreated():
+onCreate(), merupakan lifecycle yang terjadi ketika activity atau fragmen dibuat dan ditampilkan. Pada aplikasi ini semua activity dan fragment terdapat lifecycle ini
+onResume(), merupakan lifecycle yang yang dieksekusi setelah activity atau fragmen mengalami lifecycle onPause() atau setelah mengalami lifecycle onStart(). Skenario override pada lifecycle ini adalah ketika membuka aplikasi ini, maka pada halaman ini akan memuat data vocabulary dan kbbi. Lalu ketika membuka menu lain atau membuka activity lain, setelah kembali ke menu home akan memuat ulang dan mengganti data vocabulary dan kbbi yang ditampilkan. Update tersebut juga terjadi ketika pengguna keluar dari aplikasi sementara kemudian kembali lagi
+onDestroy(), merupakan lifecycle ketika fragmen atau activity dihancurkan dari memori. Skenario override pada lifecycle ini adalah ketika activity DetailBiografi dihancurkan maka akan keluar Toast yang bertuliskan "Jangan lupa kunjungi sosial media kami"
+
+### Terdapat 2 lifecycle yaitu, lifecycle Activities dan Fragment
+#### Activities
+1. onCreate(): lifecycle pertama yaitu ketika suatu Activities dijalankan oleh aplikasi, Activities tersebut yaitu MainActivity yang merupakan layout utama dari aplikasi
+
+#### Fragment
+2. onAttach(): lifecycle pertama fragment saat fragment dijalankan, yaitu meng-attach/memasangkan fragment ke MainActivity
+3. onCreateView(): dimana proses binding dijalankan dan menginflate view
+4. onViewCreated(): lifecycle yang dimana view setup dijalankan, adapter menampilkan value ke recycle view pada fragment, value tersebut diambil dari view-model
+5. onPause(): lifecycle dimana sebuah fragment ditahan prosesnya karena fragment lainnya sedang dijalankan
+6. onResume(): lifecycle dimana sebuah fragment yang ditahan prosesnya atau sedang dalam lifecycle onPause(), dijalankan kembali karena suatu event
+
+#### Activities
+1. onDestroy(): lifecycle ketika aplikasi di tutup dan diberhentikan prosesnya.
 
 
-### Arsitektur
-Arsitektur yang dipilih adalah Model-ViewModel-Model (MVVM)
+## Arsitektur
+Arsitektur yang dipilih adalah Model View View-Model (MVVM)
 Kami memilih arsitektur ini karena:
-1. Arsitektur ini paling banyak dipakai di kalangan developer android
-2. Arsitektur ini memiliki banyak turtorial di internet
-3. Arsitektur ini memiliki struktur yang mudah dimengerti
+1. Arsitektur ini memiliki banyak turtorial di internet
+2. Arsitektur ini memiliki struktur yang mudah dimengerti
+3. File-file dan folder dalam pengembangan aplikasi jadi lebih terstruktur
+4. Sangat bagus dalam menghandle request API dan live data
+5. Mudah untuk pengembangan/development aplikasi lanjutan
 
-Arsitektur MVVM sudah kami masukan/kategorikan dengan file-file penamaan sendiri-sendiri, folder dengan nama **View** adalah bagan view, folder dengan nama **ViewModel** adalah bagan viewmodel, folder dengan nama **Model** merupakan bagan model dari aplikasi.
+Model merupakan seluruh fungsi yang mengambil data dari API, terletak didalam file **datamakanan**, berisi `dataclass` dimana masing-masing properties mewakili data yang diberikan oleh API. View merupakan seluruh tampilan atau frontend dari aplikasi, tetapi view yang dinamis adalah recycle view yang dihubungkan oleh adapter. View Model merupakan metode menampilkan value yang diambil dari model, lalu dilihat oleh View yang dimana view akan merubah value yang dipaparkan ke user berdasarkan value yang ditampilkan oleh view-model
