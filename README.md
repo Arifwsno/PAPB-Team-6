@@ -51,6 +51,14 @@ Tidak adanya fitur login
     - Cara Memasak
 
 ## Lifecycle
+Terdapat 2 lifecycle yaitu, lifecycle Activities dan Fragment
+Activities
+1. onCreate(): 
+
+Fragment
+2. onAttach():
+3. onCreateView():
+4. onViewCreated():
 
 
 ## Arsitektur
