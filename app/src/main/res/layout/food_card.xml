@@ -5,11 +5,12 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="16dp">
 
+    <!--card resep-->
     <androidx.cardview.widget.CardView
         android:layout_width="156dp"
-        android:layout_height="211dp"
+        android:layout_height="196dp"
         android:background="#ffffff"
-        app:cardCornerRadius="10dp"
+        app:cardCornerRadius="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -27,12 +28,12 @@
 
             <TextView
                 android:id="@+id/tv_foodTitle"
-                app:layout_constraintTop_toBottomOf="@id/iv_foodImage"
-                android:layout_marginTop="10dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 android:layout_width="134dp"
-                android:layout_height="20dp"/>
+                android:layout_height="20dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_foodImage" />
             <!--android:text=""-->
 
             <TextView
