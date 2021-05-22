@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FAFDFD"
+    android:background="@color/background"
     tools:context=".homeFragment">
 
     <!--home-->
@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="34dp"
         android:iconifiedByDefault="false"
-        android:queryHint="Cari tempat makan..." />
+        android:queryHint="Cari tempat makan..."/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_PlaceCard"
