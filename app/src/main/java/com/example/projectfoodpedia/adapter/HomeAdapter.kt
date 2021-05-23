@@ -9,15 +9,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.projectfoodpedia.HomeFragmentDirections
 import com.example.projectfoodpedia.R
 import com.example.projectfoodpedia.databinding.CategoryItemBinding
-import com.example.projectfoodpedia.datamakanan.CategoryResponse
+
+import com.example.projectfoodpedia.datamakanan.model.CategoryModel
 import com.example.projectfoodpedia.utils.CustomOnClick
 import kotlinx.android.synthetic.main.category_item.view.*
 
 class HomeAdapter : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>(), CustomOnClick {
 
-    private var listData = ArrayList<CategoryResponse>()
+    private var listData = ArrayList<CategoryModel>()
 
-    fun setData(newList: ArrayList<CategoryResponse>) {
+    fun setData(newList: List<CategoryModel>) {
         listData.clear()
         listData.addAll(newList)
         notifyDataSetChanged()
@@ -44,9 +45,6 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>(), CustomOn
     class HomeViewHolder(var view: CategoryItemBinding) : RecyclerView.ViewHolder(view.root)
 
     override fun onClicked(view: View) {
-//        val categoryName = view.categoryName.toString()
-//        val action = HomeFragmentDirections.actionHomeToMenu(categoryName)
-//        Navigation.findNavController(view).navigate(action)
         for (category in listData){
             if (view.tag==category.category){
                 val action=HomeFragmentDirections.actionHomeToMenu(category)

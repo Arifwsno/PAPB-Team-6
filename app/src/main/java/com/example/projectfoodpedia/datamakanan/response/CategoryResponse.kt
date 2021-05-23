@@ -18,5 +18,5 @@ data class CategoryResponse(
 
 data class ListCategoryResponse(
     @SerializedName("categories")
-    val categories: ArrayList<CategoryResponse>
+    val categories: List<CategoryResponse>
 )

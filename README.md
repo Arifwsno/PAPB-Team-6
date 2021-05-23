@@ -1,6 +1,7 @@
 # PAPB-Team-6
 Repository untuk pengerjaan tugas Pengembangan Aplikasi Piranti Bergerak Team 6
 
+<<<<<<< HEAD
 Berikut merupakan file readme dari kelompok 6 PAPB
 
 ## Cara Menjalankan Aplikasi
@@ -85,3 +86,9 @@ Kami memilih arsitektur ini karena:
 5. Mudah untuk pengembangan/development aplikasi lanjutan
 
 Model merupakan seluruh fungsi yang mengambil data dari API, terletak didalam file **datamakanan**, berisi `dataclass` dimana masing-masing properties mewakili data yang diberikan oleh API. View merupakan seluruh tampilan atau frontend dari aplikasi, tetapi view yang dinamis adalah recycle view yang dihubungkan oleh adapter. View Model merupakan metode menampilkan value yang diambil dari model, lalu dilihat oleh View yang dimana view akan merubah value yang dipaparkan ke user berdasarkan value yang ditampilkan oleh view-model
+=======
+Anggota Tim
+- Arif Wicaksono 18/429056/TK/47558
+- Nafisah Faza Qinthari 18/429080/TK/47582
+- Adam Arga Fikri 18/429049/TK/47551
+>>>>>>> f913c86d8f7a16f297b7433fea84c63417cb7212

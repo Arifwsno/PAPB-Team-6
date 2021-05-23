@@ -1,110 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="16dp">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!--card resep-->
-    <androidx.cardview.widget.CardView
-        android:layout_width="156dp"
-        android:layout_height="196dp"
-        android:background="@color/pure_white"
-        app:cardCornerRadius="15dp"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="16dp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="20dp">
+    <data>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:tag="@{meal.name}"
-            android:onClick="@{listener::onClicked}"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <variable
+            name="meal"
+            type="com.example.projectfoodpedia.datamakanan.model.MealModel" />
 
-            <data>
-                <variable
-                    name="meal"
-                    type="com.example.projectfoodpedia.datamakanan.MealResponse" />
+        <variable
+            name="listener"
+            type="com.example.projectfoodpedia.utils.CustomOnClick" />
+    </data>
 
-                <variable
-                    name="listener"
-                    type="com.example.projectfoodpedia.utils.CustomOnClick" />
-            </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
 
+        <!--card resep-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="156dp"
+            android:layout_height="196dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/pure_white"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/iv_foodImage"
-                android:imageUrl="@{meal.picture}"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="130dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                android:layout_height="match_parent"
+                android:onClick="@{listener::onClicked}"
+                android:tag="@{meal.name}">
 
-            <!--nama resep-->
-            <TextView
-                android:id="@+id/tv_foodTitle"
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginStart="11dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/iv_foodImage"
-                android:text="@{meal.name}"
-                android:textSize="14sp"
-                android:textColor="@color/dark_yellow"
-                android:ellipsize="end"
-                android:singleLine="true" />
+                <ImageView
+                    android:id="@+id/iv_foodImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:imageUrl="@{meal.picture}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <!--rating-->
-            <ImageView
-                android:id="@+id/iv_ratingStar"
-                android:layout_width="12dp"
-                android:layout_height="12dp"
-                app:layout_constraintTop_toBottomOf="@id/tv_foodTitle"
-                android:layout_marginTop="8dp"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="11dp"
-                android:background="@drawable/starrating" />
+                <!--nama resep-->
+                <TextView
+                    android:id="@+id/tv_foodTitle"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="11dp"
+                    android:layout_marginTop="8dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@{meal.name}"
+                    android:textColor="@color/dark_yellow"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_foodImage" />
 
-            <TextView
-                android:id="@+id/tv_ratingText"
-                android:layout_width="20dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="@id/iv_ratingStar"
-                app:layout_constraintBottom_toBottomOf="@id/iv_ratingStar"
-                app:layout_constraintStart_toEndOf="@id/iv_ratingStar"
-                android:layout_marginStart="3dp"
-                android:textSize="12sp"
-                android:textColor="@color/yellow" />
+                <!--rating-->
+                <ImageView
+                    android:id="@+id/iv_ratingStar"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginStart="11dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/starrating"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_foodTitle" />
 
-            <!--button favorite-->
-            <Button
-                android:id="@+id/btn_favoriteFood"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/barlow_medium"
-                android:background="false"
-                android:paddingStart="0dp"
-                android:paddingLeft="0dp"
-                android:letterSpacing="0"
-                android:paddingTop="0dp"
-                android:paddingEnd="0dp"
-                android:paddingRight="0dp"
-                android:paddingBottom="0dp"
-                android:padding="4dp"
-                android:text="Tambah"
-                android:textSize="12sp"
-                android:textAllCaps="false"
-                android:textColor="@color/orange"
-                app:icon="@drawable/arrowrightcircle"
-                app:iconGravity="textEnd"
-                app:iconTint="@color/orange"
-                app:iconPadding="5dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                <TextView
+                    android:id="@+id/tv_ratingText"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:textColor="@color/yellow"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_ratingStar"
+                    app:layout_constraintStart_toEndOf="@id/iv_ratingStar"
+                    app:layout_constraintTop_toTopOf="@id/iv_ratingStar" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <!--button favorite-->
+                <Button
+                    android:id="@+id/bt_favourites"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@android:color/transparent"
+                    android:outlineSpotShadowColor="@android:color/transparent"
+                    android:outlineAmbientShadowColor="@android:color/transparent"
+                    android:fontFamily="@font/barlow_medium"
+                    android:letterSpacing="0"
+                    android:padding="4dp"
+                    android:paddingStart="0dp"
+                    android:paddingLeft="0dp"
+                    android:paddingTop="0dp"
+                    android:paddingEnd="0dp"
+                    android:paddingRight="0dp"
+                    android:paddingBottom="0dp"
+                    android:text="Favorite"
+                    android:textAllCaps="false"
+                    android:textColor="@color/orange"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_foodTitle" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

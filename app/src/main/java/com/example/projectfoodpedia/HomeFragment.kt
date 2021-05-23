@@ -34,14 +34,13 @@ class HomeFragment : Fragment() {
         rv_PlaceCard.apply {
             adapter = homeAdapter
         }
+        viewModel.getCategory()
         observeViewModel()
     }
 
     private fun observeViewModel() {
-        viewModel.getCategory().observe(viewLifecycleOwner, Observer { category ->
-            category?.let {
-                homeAdapter.setData(it.categories)
-            }
+        viewModel.dataCategory.observe(viewLifecycleOwner, Observer {
+            homeAdapter.setData(it)
         })
     }
 }

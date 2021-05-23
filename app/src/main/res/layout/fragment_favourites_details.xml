@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="detail"
+            type="com.example.projectfoodpedia.datamakanan.model.MealDetailsModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FAFDFD"
+            tools:context=".FoodDetailsFragment">
+
+            <!--Detail makanan-->
+            <ImageView
+                android:id="@+id/iv_foodDetailsImageFavourites"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:imageUrl="@{detail.picture}"/>
+
+            <TextView
+                android:id="@+id/tv_foodDetailsTitleFavourites"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp"
+                android:text="@{detail.name}"
+                android:fontFamily="@font/barlow_bold"
+                android:textSize="18sp"
+                android:textAllCaps="true"
+                android:textColor="@color/dark_yellow"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/iv_foodDetailsImageFavourites" />
+
+            <TextView
+                android:id="@+id/tv_foodDetailsCategoryFavourites"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="16dp"
+                android:text="@{detail.category}"
+                android:textSize="14sp"
+                android:fontFamily="@font/barlow_semibold"
+                android:textColor="@color/dark_yellow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_foodDetailsTitleFavourites" />
+
+            <TextView
+                android:id="@+id/tv_instructionFavourites"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@{detail.instruction}"
+                android:fontFamily="@font/barlow_regular"
+                android:textSize="12sp"
+                android:textColor="@color/dark_yellow"
+                app:layout_constraintTop_toBottomOf="@id/tv_foodDetailsCategoryFavourites" />
+
+
+            <!--button favorite-->
+            <Button
+                android:id="@+id/fab_favourites"
+                android:clickable="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:paddingStart="0dp"
+                android:paddingLeft="0dp"
+                android:letterSpacing="0"
+                android:paddingTop="0dp"
+                android:paddingEnd="0dp"
+                android:paddingRight="0dp"
+                android:paddingBottom="0dp"
+                android:padding="4dp"
+                android:backgroundTint="@color/light_orange"
+                android:outlineSpotShadowColor="@android:color/transparent"
+                android:outlineAmbientShadowColor="@android:color/transparent"
+                android:text="@string/favorite"
+                android:fontFamily="@font/barlow_semibold"
+                android:textSize="12sp"
+                android:textAllCaps="false"
+                android:textColor="@color/orange"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>

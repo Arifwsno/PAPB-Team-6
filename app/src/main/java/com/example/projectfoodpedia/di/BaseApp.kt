@@ -13,10 +13,13 @@ class BaseApp : Application() {
             androidLogger(Level.ERROR)
             androidContext(this@BaseApp)
             modules(
-                listOf(
-                    repositoryModule,
-                    viewModel
-                )
+                    listOf(
+                            databaseModule,
+                            repositoryModule,
+                            viewModel,
+                        useCaseModule,
+                        networkModule
+                    )
             )
         }
     }

@@ -1,12 +1,11 @@
 package com.example.projectfoodpedia.datamakanan
 
-import android.graphics.Picture
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class MealDetails(
+data class MealDetailsResponse(
     @SerializedName("idMeal")
     val id: String,
 
@@ -25,5 +24,5 @@ data class MealDetails(
 
 data class ListMealDetails(
     @SerializedName("meals")
-    val meals: ArrayList<MealDetails>
+    val mealResponses: ArrayList<MealDetailsResponse>
 )

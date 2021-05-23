@@ -3,21 +3,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projectfoodpedia.HomeFragmentDirections
+import com.example.projectfoodpedia.MenuFragment
 import com.example.projectfoodpedia.MenuFragmentDirections
 import com.example.projectfoodpedia.R
 import com.example.projectfoodpedia.databinding.FoodCardBinding
 import com.example.projectfoodpedia.datamakanan.MealResponse
+import com.example.projectfoodpedia.datamakanan.model.MealModel
 import com.example.projectfoodpedia.utils.CustomOnClick
 import kotlinx.android.synthetic.main.food_card.view.*
 
 class MenuAdapter : RecyclerView.Adapter<MenuAdapter.MenuViewHolder>(), CustomOnClick {
 
-    private var listData = ArrayList<MealResponse>()
 
-    fun setData(newList: ArrayList<MealResponse>?) {
+    private var listData = ArrayList<MealModel>()
+
+    fun setData(newList: List<MealModel>?) {
         if (newList==null)return
         listData.clear()
         listData.addAll(newList)
@@ -41,9 +46,6 @@ class MenuAdapter : RecyclerView.Adapter<MenuAdapter.MenuViewHolder>(), CustomOn
     class MenuViewHolder(var view: FoodCardBinding) : RecyclerView.ViewHolder(view.root)
 
     override fun onClicked(view: View) {
-//        val mealName = view.tv_foodTitle.toString()
-//        val action = MenuFragmentDirections.actionMenuToDetail(mealName)
-//        Navigation.findNavController(view).navigate(action)
         for (meal in listData){
             if (view.tag==meal.name){
                 val action= MenuFragmentDirections.actionMenuToDetail(meal)

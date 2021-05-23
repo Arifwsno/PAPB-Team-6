@@ -1,14 +1,14 @@
 package com.example.projectfoodpedia.viewmodel
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.example.projectfoodpedia.datamakanan.ListMealDetails
-import com.example.projectfoodpedia.datamakanan.ListMealResponse
-import com.example.projectfoodpedia.datamakanan.MealDetails
-import com.example.projectfoodpedia.repository.IMealsRepository
+import androidx.lifecycle.asLiveData
+import com.example.projectfoodpedia.datamakanan.model.MealDetailsModel
+import com.example.projectfoodpedia.usecase.IMealUseCase
 
-class DetailViewModel(private val mealsRepository: IMealsRepository, private val meal: String) :
-    ViewModel() {
-    private fun getRepo() = mealsRepository.getDetail(meal)
-    fun getDetail(): LiveData<MealDetails> = getRepo()
+//Controller dari clean architecture
+class DetailViewModel(private val mealUseCase: IMealUseCase, private val id: String) : ViewModel() {
+    val dataDetail = mealUseCase.getDetail(id).asLiveData()
+    fun setFavouriteMeals(mealDetailsModel: MealDetailsModel, state: Boolean){
+        mealUseCase.setFavouriteMeal(mealDetailsModel, state)
+    }
 }
