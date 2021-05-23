@@ -10,16 +10,14 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface MealsApi {
-    @GET ("categories.php")
+    @GET("categories.php")
     fun getListCategories(): Observable<ListCategoryResponse> //observable bakal nungguin data terus || ada lagi single yang cuman sekali nerima
 
 
-    @GET ("filter.php")
-    fun getListMeal(@Query("c") c : String): Observable<ListMealResponse>
+    @GET("filter.php")
+    fun getListMeal(@Query("c") c: String?): Observable<ListMealResponse>
 
-//    @GET ("filter.php?c={category}")
-//    fun getListMeal(@Path("category") category : String): ListMealResponse
 
-    @GET ("lookup.php")
-    fun getDetails(@Query("i") i : String): Observable<ListMealDetails>
+    @GET("lookup.php")
+    fun getDetails(@Query("i") i: String): Observable<ListMealDetails>
 }

@@ -6,7 +6,12 @@
     android:layout_height="match_parent"
     android:background="#FAFDFD"
     tools:context=".FoodDetailsFragment">
+    <data>
 
+        <variable
+            name="detail"
+            type="com.example.projectfoodpedia.datamakanan.MealDetails" />
+    </data>
     <!--foto makanan-->
     <ImageView
         android:id="@+id/iv_foodDetailsImage"
@@ -15,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/nasgor_image_flat"/>
+        android:imageUrl="@{detail.picture}"/>
 
     <!--button favorite-->
     <Button
@@ -50,16 +55,30 @@
         android:layout_marginStart="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="16dp"
-        android:text="Nasi Goreng Telor"
+        android:text="@{detail.name}"
         android:fontFamily="@font/barlow_bold"
         android:textSize="18sp"
         android:textAllCaps="true"
         android:textColor="@color/dark_yellow"
         android:gravity="center"/>
 
-    <!--resep-->
+    <!--category-->
     <TextView
-        android:id="@+id/tv_foodDetailsContent"
+        android:id="@+id/tv_foodDetailsCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="16dp"
+        android:text="@{detail.category}"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_foodDetailsTitle" />
+
+    <!--instruksi-->
+    <TextView
+        android:id="@+id/tv_instruction"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,9 +87,12 @@
         android:layout_marginEnd="16dp"
         app:layout_constraintTop_toBottomOf="@id/tv_foodDetailsTitle"
         android:layout_marginTop="16dp"
-        android:text="@string/foodDetailsContent"
+        android:text="@{detail.instruction}"
         android:fontFamily="@font/barlow_regular"
         android:textSize="12sp"
         android:textColor="@color/dark_yellow"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
