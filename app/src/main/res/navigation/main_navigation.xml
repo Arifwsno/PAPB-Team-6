@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.example.projectfoodpedia.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/actionMenuToDetail"
+            app:destination="@id/foodDetailsFragment" />
+        <argument
+            android:name="category"
+            app:argType="com.example.projectfoodpedia.datamakanan.model.CategoryModel" />
+        <action
+            android:id="@+id/actionMenuToFavourites"
+            app:destination="@id/favouritesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodDetailsFragment"
+        android:name="com.example.projectfoodpedia.FoodDetailsFragment"
+        android:label="fragment_food_details"
+        tools:layout="@layout/fragment_food_details" >
+        <argument
+            android:name="meal"
+            app:argType="com.example.projectfoodpedia.datamakanan.model.MealModel" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.projectfoodpedia.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/actionHomeToMenu"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favouritesFragment"
+        android:name="com.example.projectfoodpedia.FavouritesFragment"
+        android:label="fragment_favourites"
+        tools:layout="@layout/fragment_favourites" >
+        <action
+            android:id="@+id/actionFavouriteToFavouritesDetails"
+            app:destination="@id/favouriteDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favouriteDetailFragment"
+        android:name="com.example.projectfoodpedia.FavouritesDetailsFragment"
+        android:label="fragment_blank"
+        tools:layout="@layout/fragment_favourites_details" >
+        <argument
+            android:name="meal"
+            app:argType="com.example.projectfoodpedia.datamakanan.model.MealDetailsModel" />
+    </fragment>
+</navigation>
