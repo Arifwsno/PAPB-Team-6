@@ -69,6 +69,19 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_foodDetailsCategoryFavourites" />
 
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_favouritesFavourites"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="16dp"
+                android:background="#FFFFFF"
+                android:clickable="true"
+                app:backgroundTint="#FF0000"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_foodDetailsImageFavourites"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@drawable/ic_favourites" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
