@@ -19,7 +19,6 @@ import org.koin.core.parameter.parametersOf
 
 class MenuFragment : Fragment() {
 
-
     private val args: MenuFragmentArgs by navArgs()
     private lateinit var viewModel: MenuViewModel
     private var menuAdapter = MenuAdapter()
@@ -42,12 +41,7 @@ class MenuFragment : Fragment() {
             adapter = menuAdapter
         }
 
-        floatingActionButton.setOnClickListener {
-            findNavController(this).navigate(MenuFragmentDirections.actionMenuToFavourites())
-        }
-
         viewModel.getListMeal()
-
         observeViewModel()
     }
 

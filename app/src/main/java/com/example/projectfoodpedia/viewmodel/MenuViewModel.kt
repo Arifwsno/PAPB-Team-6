@@ -27,5 +27,4 @@ class MenuViewModel(private val mealUseCase: IMealUseCase, private val category:
                         })
         )
     }
-
 }

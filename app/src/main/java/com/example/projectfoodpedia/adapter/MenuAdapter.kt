@@ -3,6 +3,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
@@ -14,13 +15,12 @@ import com.example.projectfoodpedia.databinding.FoodCardBinding
 import com.example.projectfoodpedia.datamakanan.MealResponse
 import com.example.projectfoodpedia.datamakanan.model.MealModel
 import com.example.projectfoodpedia.utils.CustomOnClick
-import com.example.projectfoodpedia.viewmodel.FavouritesViewModel
 import kotlinx.android.synthetic.main.food_card.view.*
 
 class MenuAdapter : RecyclerView.Adapter<MenuAdapter.MenuViewHolder>(), CustomOnClick {
 
+
     private var listData = ArrayList<MealModel>()
-    //private var insertDatabase = MenuFragment()
 
     fun setData(newList: List<MealModel>?) {
         if (newList==null)return

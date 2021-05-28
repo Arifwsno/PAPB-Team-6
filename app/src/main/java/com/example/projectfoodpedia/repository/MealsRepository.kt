@@ -67,5 +67,4 @@ class MealsRepository(
             localDataSource.updateFavouriteMeal(mealEntity, state)
         }
     }
-
 }

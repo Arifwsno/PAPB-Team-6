@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.projectfoodpedia.HomeFragmentDirections
 import com.example.projectfoodpedia.R
 import com.example.projectfoodpedia.databinding.CategoryItemBinding
-import com.example.projectfoodpedia.datamakanan.CategoryResponse
+
 import com.example.projectfoodpedia.datamakanan.model.CategoryModel
 import com.example.projectfoodpedia.utils.CustomOnClick
 import kotlinx.android.synthetic.main.category_item.view.*
