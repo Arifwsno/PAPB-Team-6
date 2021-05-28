@@ -78,7 +78,6 @@
                 android:textColor="@color/dark_yellow"
                 app:layout_constraintTop_toBottomOf="@id/tv_foodDetailsCategoryFavourites" />
 
-
             <!--button favorite-->
             <Button
                 android:id="@+id/fab_favourites"
@@ -103,6 +102,7 @@
                 android:textSize="12sp"
                 android:textAllCaps="false"
                 android:textColor="@color/orange"/>
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

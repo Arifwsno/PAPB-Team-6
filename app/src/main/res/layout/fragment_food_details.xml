@@ -85,6 +85,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_foodDetailsTitle" />
 
+
     <!--instruksi-->
     <TextView
         android:id="@+id/tv_instruction"
@@ -100,6 +101,21 @@
         android:fontFamily="@font/barlow_regular"
         android:textSize="12sp"
         android:textColor="@color/dark_yellow"/>
+  
+    <Button
+        android:id="@+id/btn_notification"
+        android:layout_width="67dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="#00BCD4"
+        android:text="Notify"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_foodDetailsTitle" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
