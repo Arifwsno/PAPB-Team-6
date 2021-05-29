@@ -13,4 +13,10 @@
     <string name="rating_menu">Rating dan Ulasan</string>
     <string name="panduan_pengguna">Panduan Pengguna</string>
     <string name="about">Tentang FoodPedia</string>
+    <string name="fullname">Nama Lengkap</string>
+    <string name="email">Email</string>
+    <string name="password">Kata Sandi</string>
+    <string name="password_hint">Masukkan kata sandi-mu</string>
+    <string name="email_hint">Contoh : gordonramsay70@gmail.com</string>
+    <string name="fullname_hint">Isikan nama lengkapmu</string>
 </resources>
