@@ -16,14 +16,15 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp">
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp">
 
         <!--card resep-->
         <androidx.cardview.widget.CardView
             android:layout_width="156dp"
             android:layout_height="196dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
             android:background="@color/pure_white"
             app:cardCornerRadius="15dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -81,31 +82,31 @@
                     app:layout_constraintStart_toEndOf="@id/iv_ratingStar"
                     app:layout_constraintTop_toTopOf="@id/iv_ratingStar" />
 
-                <!--button favorite-->
-                <Button
-                    android:id="@+id/bt_favourites"
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="@android:color/transparent"
-                    android:outlineSpotShadowColor="@android:color/transparent"
-                    android:outlineAmbientShadowColor="@android:color/transparent"
-                    android:fontFamily="@font/barlow_medium"
-                    android:letterSpacing="0"
-                    android:padding="4dp"
-                    android:paddingStart="0dp"
-                    android:paddingLeft="0dp"
-                    android:paddingTop="0dp"
-                    android:paddingEnd="0dp"
-                    android:paddingRight="0dp"
-                    android:paddingBottom="0dp"
-                    android:text="Favorite"
-                    android:textAllCaps="false"
-                    android:textColor="@color/orange"
-                    android:textSize="12sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_foodTitle" />
+<!--                &lt;!&ndash;button favorite&ndash;&gt;-->
+<!--                <Button-->
+<!--                    android:id="@+id/bt_favourites"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="35dp"-->
+<!--                    android:layout_marginBottom="10dp"-->
+<!--                    android:backgroundTint="@android:color/transparent"-->
+<!--                    android:outlineSpotShadowColor="@android:color/transparent"-->
+<!--                    android:outlineAmbientShadowColor="@android:color/transparent"-->
+<!--                    android:fontFamily="@font/barlow_medium"-->
+<!--                    android:letterSpacing="0"-->
+<!--                    android:padding="4dp"-->
+<!--                    android:paddingStart="0dp"-->
+<!--                    android:paddingLeft="0dp"-->
+<!--                    android:paddingTop="0dp"-->
+<!--                    android:paddingEnd="0dp"-->
+<!--                    android:paddingRight="0dp"-->
+<!--                    android:paddingBottom="0dp"-->
+<!--                    android:text="Favorite"-->
+<!--                    android:textAllCaps="false"-->
+<!--                    android:textColor="@color/orange"-->
+<!--                    android:textSize="12sp"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/tv_foodTitle" />-->
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
