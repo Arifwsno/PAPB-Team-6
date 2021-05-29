@@ -1,14 +1,391 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".profile">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!--profile-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_profile"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="82dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/pure_white"
+        android:outlineSpotShadowColor="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--profpict-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/iv_profilePicture"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="16dp"
+                android:outlineSpotShadowColor="@android:color/transparent"
+                android:outlineAmbientShadowColor="@android:color/transparent"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/nasgor_image" />
+
+            </androidx.cardview.widget.CardView>
+
+            <!--nama-->
+            <TextView
+                android:id="@+id/tv_userName"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/barlow_semibold"
+                android:text="Nama Pengguna"
+                android:textColor="@color/dark_yellow"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@id/iv_profilePicture"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--email-->
+            <TextView
+                android:id="@+id/tv_userEmail"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/barlow_regular"
+                android:text="Email@email.com"
+                android:textColor="@color/dark_yellow"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/iv_profilePicture"
+                app:layout_constraintTop_toBottomOf="@id/tv_userName" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!--cv menu-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_menu"
+        android:layout_width="match_parent"
+        android:layout_height="700dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/pure_white"
+        android:outlineSpotShadowColor="@android:color/transparent"
+        app:layout_constraintTop_toBottomOf="@id/cv_profile">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:outlineSpotShadowColor="@android:color/transparent">
+
+            <!--akun title-->
+            <TextView
+                android:id="@+id/tv_akunTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/barlow_semibold"
+                android:text="Akun"
+                android:textColor="@color/dark_yellow"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--icon profile-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/iv_profileIcon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:outlineSpotShadowColor="@android:color/transparent"
+                android:outlineAmbientShadowColor="@android:color/transparent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_akunTitle">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/profileicon"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!--profile menu title-->
+            <TextView
+                android:id="@+id/tv_profileMenuTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/barlow_semibold"
+                android:text="@string/profil_akun"
+                android:textColor="@color/dark_yellow"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_profileIcon"
+                app:layout_constraintStart_toEndOf="@id/iv_profileIcon"
+                app:layout_constraintTop_toTopOf="@id/iv_profileIcon" />
+
+            <!--arrow profile-->
+            <ImageView
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_profileIcon"
+                app:layout_constraintTop_toTopOf="@id/iv_profileIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/arrowright"/>
+
+            <!--icon resep-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/iv_recipeIcon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:outlineSpotShadowColor="@android:color/transparent"
+                android:outlineAmbientShadowColor="@android:color/transparent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_profileIcon">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/recipeicon"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!--profile menu title-->
+            <TextView
+                android:id="@+id/tv_favRecipeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/barlow_semibold"
+                android:text="@string/resep_favorit"
+                android:textColor="@color/dark_yellow"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_recipeIcon"
+                app:layout_constraintStart_toEndOf="@id/iv_recipeIcon"
+                app:layout_constraintTop_toTopOf="@id/iv_recipeIcon" />
+
+            <!--arrow fav resep-->
+            <ImageView
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_recipeIcon"
+                app:layout_constraintTop_toTopOf="@id/iv_recipeIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/arrowright"/>
+
+            <!--icon rate review-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/iv_ratingIcon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:outlineSpotShadowColor="@android:color/transparent"
+                android:outlineAmbientShadowColor="@android:color/transparent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_recipeIcon">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ratingicon"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!--rate review title-->
+            <TextView
+                android:id="@+id/tv_ratingTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/barlow_semibold"
+                android:text="@string/rating_menu"
+                android:textColor="@color/dark_yellow"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_ratingIcon"
+                app:layout_constraintStart_toEndOf="@id/iv_ratingIcon"
+                app:layout_constraintTop_toTopOf="@id/iv_ratingIcon" />
+
+            <!--arrow rate review-->
+            <ImageView
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_ratingIcon"
+                app:layout_constraintTop_toTopOf="@id/iv_ratingIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/arrowright"/>
+
+            <!--FoodPedia title-->
+            <TextView
+                android:id="@+id/tv_foodpediaTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/barlow_semibold"
+                android:text="FoodPedia"
+                android:textColor="@color/dark_yellow"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_ratingIcon"/>
+
+            <!--icon panduan pengguna-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/iv_helpIcon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:outlineSpotShadowColor="@android:color/transparent"
+                android:outlineAmbientShadowColor="@android:color/transparent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_foodpediaTitle">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/helpicon"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!--panduan pengguna title-->
+            <TextView
+                android:id="@+id/tv_helpTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/barlow_semibold"
+                android:text="@string/panduan_pengguna"
+                android:textColor="@color/dark_yellow"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_helpIcon"
+                app:layout_constraintStart_toEndOf="@id/iv_helpIcon"
+                app:layout_constraintTop_toTopOf="@id/iv_helpIcon" />
+
+            <!--arrow rate panduan pengguna-->
+            <ImageView
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_helpIcon"
+                app:layout_constraintTop_toTopOf="@id/iv_helpIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/arrowright"/>
+
+            <!--icon panduan pengguna-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/iv_aboutIcon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:outlineSpotShadowColor="@android:color/transparent"
+                android:outlineAmbientShadowColor="@android:color/transparent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_helpIcon">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/infoicon"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!--panduan pengguna title-->
+            <TextView
+                android:id="@+id/tv_aboutTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/barlow_semibold"
+                android:text="@string/about"
+                android:textColor="@color/dark_yellow"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_aboutIcon"
+                app:layout_constraintStart_toEndOf="@id/iv_aboutIcon"
+                app:layout_constraintTop_toTopOf="@id/iv_aboutIcon" />
+
+            <!--arrow rate about-->
+            <ImageView
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_aboutIcon"
+                app:layout_constraintTop_toTopOf="@id/iv_aboutIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/arrowright"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="320dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="40dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/barlow_bold"
+        android:text="@string/logout"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
