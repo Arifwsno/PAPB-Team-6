@@ -1,7 +1,5 @@
-package com.example.projectfoodpedia.database
+package com.example.projectfoodpedia.databasefavourites
 
-import androidx.annotation.NonNull
-import androidx.annotation.Nullable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 

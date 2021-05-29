@@ -80,7 +80,7 @@
 
             <!--button favorite-->
             <Button
-                android:id="@+id/fab_favourites"
+                android:id="@+id/fab_favouritesFavourites"
                 android:clickable="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

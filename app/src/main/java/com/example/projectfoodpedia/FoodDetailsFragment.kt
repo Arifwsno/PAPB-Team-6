@@ -112,26 +112,6 @@ class FoodDetailsFragment : Fragment() {
         }
     }
 
-//    private fun setFavouriteStatus(status: Boolean) {
-//        if (status) {
-//            fab_favourites.(context?.let {
-//                ContextCompat.getColor(
-//                    it,
-//                    R.color.design_default_color_error
-//                )
-//            })
-//        } else {
-//            fab_favourites.setBackgroundColor(Color.CYAN)
-//        }
-//
-////        fab_tv_show.setImageDrawable(context?.let {
-////            ContextCompat.getDrawable(
-////                it,
-////                R.drawable.ic_favorite
-////            )
-////        })
-//    }
-
     private fun observeViewModel() {
         viewModel.dataDetail.observe(viewLifecycleOwner, Observer { detail ->
             if (detail != null) {

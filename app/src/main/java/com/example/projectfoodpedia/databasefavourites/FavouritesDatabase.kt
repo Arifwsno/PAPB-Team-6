@@ -1,4 +1,4 @@
-package com.example.projectfoodpedia.database
+package com.example.projectfoodpedia.databasefavourites
 
 import androidx.room.Database
 import androidx.room.RoomDatabase

@@ -1,7 +1,7 @@
 package com.example.projectfoodpedia.di
 import androidx.room.Room
-import com.example.projectfoodpedia.database.FavouritesDatabase
-import com.example.projectfoodpedia.database.LocalDataSource
+import com.example.projectfoodpedia.databasefavourites.FavouritesDatabase
+import com.example.projectfoodpedia.databasefavourites.LocalDataSource
 import com.example.projectfoodpedia.repository.IMealsRepository
 import com.example.projectfoodpedia.repository.MealsRepository
 import com.example.projectfoodpedia.service.MealsApi
