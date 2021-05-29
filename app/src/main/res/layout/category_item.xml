@@ -6,47 +6,89 @@
         <variable
             name="category"
             type="com.example.projectfoodpedia.datamakanan.model.CategoryModel" />
+
         <variable
             name="listener"
             type="com.example.projectfoodpedia.utils.CustomOnClick" />
     </data>
 
-    <androidx.cardview.widget.CardView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
-        android:padding="8dp"
-        android:layout_margin="16dp"
-        android:layout_height="200dp">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="200dp"
-            android:tag="@{category.category}"
-            android:onClick="@{listener::onClicked}"
-            android:layout_height="match_parent">
+        <androidx.cardview.widget.CardView
+            android:layout_width="156dp"
+            android:layout_height="200dp"
+            android:background="@color/pure_white"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/categoryImage"
-                android:imageUrl="@{category.picture}"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:scaleType="fitXY"
-                android:layout_height="150dp" />
+                android:layout_height="match_parent"
+                android:onClick="@{listener::onClicked}"
+                android:tag="@{category.category}">
 
-            <TextView
-                android:id="@+id/categoryName"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:text="@{category.category}"
-                android:textAlignment="center"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/categoryImage" />
+                <!--image-->
+                <ImageView
+                    android:id="@+id/categoryImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:imageUrl="@{category.picture}"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <!--title-->
+                <TextView
+                    android:id="@+id/categoryName"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="11dp"
+                    android:layout_marginTop="10dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/barlow_semibold"
+                    android:singleLine="true"
+                    android:text="@{category.category}"
+                    android:textColor="@color/dark_yellow"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/categoryImage" />
 
-    </androidx.cardview.widget.CardView>
+                <!--button lihat menu-->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_lihatMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginBottom="8dp"
+                    android:backgroundTint="@android:color/transparent"
+                    android:outlineSpotShadowColor="@android:color/transparent"
+                    android:outlineAmbientShadowColor="@android:color/transparent"
+                    android:fontFamily="@font/barlow_medium"
+                    android:letterSpacing="0"
+                    android:paddingStart="0dp"
+                    android:paddingLeft="0dp"
+                    android:paddingTop="0dp"
+                    android:paddingEnd="0dp"
+                    android:paddingRight="0dp"
+                    android:paddingBottom="0dp"
+                    android:text="Lihat Menu"
+                    android:textAllCaps="false"
+                    android:textColor="@color/orange"
+                    android:textSize="12sp"
+                    app:icon="@drawable/arrowrightcircle"
+                    app:iconGravity="textEnd"
+                    app:iconPadding="5dp"
+                    app:iconTint="@color/orange"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/categoryName" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

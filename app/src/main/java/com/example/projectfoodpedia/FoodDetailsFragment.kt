@@ -39,7 +39,6 @@ class FoodDetailsFragment : Fragment() {
     private val description = "Food Notification"
 
     var status = false
-
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?

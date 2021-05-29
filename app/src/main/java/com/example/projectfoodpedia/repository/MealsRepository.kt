@@ -1,6 +1,6 @@
 package com.example.projectfoodpedia.repository
 
-import com.example.projectfoodpedia.database.LocalDataSource
+import com.example.projectfoodpedia.databasefavourites.LocalDataSource
 import com.example.projectfoodpedia.datamakanan.*
 import com.example.projectfoodpedia.datamakanan.model.CategoryModel
 import com.example.projectfoodpedia.datamakanan.model.MealDetailsModel
@@ -66,5 +66,4 @@ class MealsRepository(
             localDataSource.updateFavouriteMeal(mealEntity, state)
         }
     }
-
 }

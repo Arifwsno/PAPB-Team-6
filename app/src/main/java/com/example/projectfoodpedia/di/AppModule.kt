@@ -1,8 +1,7 @@
 package com.example.projectfoodpedia.di
-
 import androidx.room.Room
-import com.example.projectfoodpedia.database.FavouritesDatabase
-import com.example.projectfoodpedia.database.LocalDataSource
+import com.example.projectfoodpedia.databasefavourites.FavouritesDatabase
+import com.example.projectfoodpedia.databasefavourites.LocalDataSource
 import com.example.projectfoodpedia.repository.IMealsRepository
 import com.example.projectfoodpedia.repository.MealsRepository
 import com.example.projectfoodpedia.service.MealsApi
@@ -24,7 +23,6 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
-
 //dependencies injection
 val repositoryModule = module {
     single { RemoteDataSource(get()) }
@@ -32,46 +30,41 @@ val repositoryModule = module {
     factory { AppExecutors() }
     single<IMealsRepository> { MealsRepository(get(), get(), get()) }
 }
-
 val viewModel = module {
     viewModel { HomeViewModel(get()) }
     viewModel { (category: String) -> MenuViewModel(get(), category) }
     viewModel { FavouritesViewModel(get()) }
     viewModel { (meal: String) -> DetailViewModel(get(), meal) }
 }
-
 //Room Database Injection
 val databaseModule = module {
     factory { get<FavouritesDatabase>().favouriteDao() }
     single {
         Room.databaseBuilder(
-                androidContext(),
-                FavouritesDatabase::class.java, "favourite_table.db"
+            androidContext(),
+            FavouritesDatabase::class.java, "favourite_table.db"
         ).build()
     }
 }
-
 //Inisialisasi Retrofit menggunakan Injection
 val networkModule = module {
     single {
-
         OkHttpClient.Builder()
-                .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
-                .connectTimeout(120, TimeUnit.SECONDS)
-                .readTimeout(120, TimeUnit.SECONDS)
-                .build()
+            .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
+            .connectTimeout(120, TimeUnit.SECONDS)
+            .readTimeout(120, TimeUnit.SECONDS)
+            .build()
     }
     single {
         val retrofit = Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .client(get())
-                .build()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+            .client(get())
+            .build()
         retrofit.create(MealsApi::class.java)
     }
 }
-
 val useCaseModule = module {
     factory <IMealUseCase>{ MealUseCase(get()) }
 }

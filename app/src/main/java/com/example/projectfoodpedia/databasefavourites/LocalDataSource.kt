@@ -1,9 +1,5 @@
-package com.example.projectfoodpedia.database
+package com.example.projectfoodpedia.databasefavourites
 
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
-import androidx.room.Update
 import kotlinx.coroutines.flow.Flow
 
 class LocalDataSource(private val favouritesDao: FavouritesDao) {

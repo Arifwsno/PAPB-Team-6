@@ -16,9 +16,6 @@
         <argument
             android:name="category"
             app:argType="com.example.projectfoodpedia.datamakanan.model.CategoryModel" />
-        <action
-            android:id="@+id/actionMenuToFavourites"
-            app:destination="@id/favouritesFragment" />
     </fragment>
     <fragment
         android:id="@+id/foodDetailsFragment"
@@ -28,6 +25,7 @@
         <argument
             android:name="meal"
             app:argType="com.example.projectfoodpedia.datamakanan.model.MealModel" />
+
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -36,6 +34,9 @@
         <action
             android:id="@+id/actionHomeToMenu"
             app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/actionHomeToNotification"
+            app:destination="@id/notification" />
     </fragment>
     <fragment
         android:id="@+id/favouritesFragment"
@@ -55,4 +56,14 @@
             android:name="meal"
             app:argType="com.example.projectfoodpedia.datamakanan.model.MealDetailsModel" />
     </fragment>
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.example.projectfoodpedia.profile"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/notification"
+        android:name="com.example.projectfoodpedia.notification"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" />
 </navigation>

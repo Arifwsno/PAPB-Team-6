@@ -1,6 +1,6 @@
 package com.example.projectfoodpedia.utils
 
-import com.example.projectfoodpedia.database.MealsEntity
+import com.example.projectfoodpedia.databasefavourites.MealsEntity
 import com.example.projectfoodpedia.datamakanan.CategoryResponse
 import com.example.projectfoodpedia.datamakanan.MealDetailsResponse
 import com.example.projectfoodpedia.datamakanan.MealResponse
