@@ -1,6 +1,5 @@
 package com.example.projectfoodpedia.repository
 
-import android.util.Log
 import com.example.projectfoodpedia.database.LocalDataSource
 import com.example.projectfoodpedia.datamakanan.*
 import com.example.projectfoodpedia.datamakanan.model.CategoryModel
