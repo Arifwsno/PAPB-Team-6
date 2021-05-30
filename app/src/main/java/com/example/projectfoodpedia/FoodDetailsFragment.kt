@@ -58,26 +58,26 @@ class FoodDetailsFragment : Fragment() {
         )
 
         // Notification action
-        dataBinding.btnNotification.setOnClickListener {
-            notificationChannel = NotificationChannel(
-                    channelID,
-                    description,
-                    NotificationManager.IMPORTANCE_HIGH
-            )
-            notificationChannel.enableLights(true)
-            notificationChannel.lightColor = Color.BLUE
-            notificationChannel.enableVibration(false)
-            notificationManager.createNotificationChannel(notificationChannel)
-
-            builder = Notification.Builder(activity, channelID)
-                    .setContentTitle(tv_foodDetailsTitle.text.toString())
-                    .setContentText("Your food is ready!")
-                    .setSmallIcon(R.drawable.ic_launcher_round)
-                    .setLargeIcon(BitmapFactory.decodeResource(this.resources, R.drawable.ic_launcher))
-                    .setContentIntent(pendingIntent)
-
-            notificationManager.notify(1234, builder.build())
-        }
+//        dataBinding.btnNotification.setOnClickListener {
+//            notificationChannel = NotificationChannel(
+//                    channelID,
+//                    description,
+//                    NotificationManager.IMPORTANCE_HIGH
+//            )
+//            notificationChannel.enableLights(true)
+//            notificationChannel.lightColor = Color.BLUE
+//            notificationChannel.enableVibration(false)
+//            notificationManager.createNotificationChannel(notificationChannel)
+//
+//            builder = Notification.Builder(activity, channelID)
+//                    .setContentTitle(tv_foodDetailsTitle.text.toString())
+//                    .setContentText("Your food is ready!")
+//                    .setSmallIcon(R.drawable.ic_launcher_round)
+//                    .setLargeIcon(BitmapFactory.decodeResource(this.resources, R.drawable.ic_launcher))
+//                    .setContentIntent(pendingIntent)
+//
+//            notificationManager.notify(1234, builder.build())
+//        }
 
         var categoryMeal = args.meal.id
         viewModel = getViewModel { parametersOf(categoryMeal) }

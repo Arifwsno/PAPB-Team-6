@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "944220471376",
+    "project_id": "papb-team-6",
+    "storage_bucket": "papb-team-6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:944220471376:android:f05839495fd3d8c0169155",
+        "android_client_info": {
+          "package_name": "com.example.projectfoodpedia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "944220471376-k4v6igsqhmo3a171qmh093logen0hpqg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYMJMOHusUlR57PfaitCfx31GY1SpI074"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "944220471376-k4v6igsqhmo3a171qmh093logen0hpqg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
