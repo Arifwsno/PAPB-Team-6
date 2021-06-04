@@ -15,10 +15,12 @@ import io.reactivex.Single
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
+// Digunakan untuk memberikan data yang di request oleh app (fragment) melalui use case
 class MealsRepository(
         private val remoteDataSource: RemoteDataSource,
         private val localDataSource: LocalDataSource,
         private val appExecutors: AppExecutors) : IMealsRepository {
+    // Data diambil dari module, kemudian di mapping dari response (hasil API) ke domain (data module)
     override fun getCategory(): Single<List<CategoryModel>> {
         return remoteDataSource.getCategory().map {
             DataMapper.mapCategoryResponsesToDomain(it.categories)
@@ -39,13 +41,12 @@ class MealsRepository(
                 }
             }
 
-            override fun shouldFetch(data: MealDetailsModel?): Boolean = // ini return langsung
-                    data == null || data.name.isNullOrEmpty()// ini sama aja --> return data == null
+            override fun shouldFetch(data: MealDetailsModel?): Boolean =
+                    data == null || data.name.isNullOrEmpty()
 
             override suspend fun createCall(): Flow<ApiResponse<List<MealDetailsResponse>>> {
                 return remoteDataSource.getDetails(id)
             }
-
 
             override suspend fun saveCallResult(data: List<MealDetailsResponse>) {
                 val mealEntity = DataMapper.mapMealDetailsResponseToEntity(data)

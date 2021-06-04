@@ -23,7 +23,7 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
-//dependencies injection
+// Dependencies injection
 val repositoryModule = module {
     single { RemoteDataSource(get()) }
     single { LocalDataSource(get()) }

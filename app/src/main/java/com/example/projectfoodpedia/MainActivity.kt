@@ -12,6 +12,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
+
 class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
 
@@ -19,12 +20,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_main)
-        navController = Navigation.findNavController(this,R.id.fragment)
+        navController = Navigation.findNavController(this, R.id.fragment)
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
         val appBarConfiguration = AppBarConfiguration.Builder(
             R.id.favouritesFragment, R.id.homeFragment, R.id.profileFragment
         ).build()
-        setupActionBarWithNavController(navController,appBarConfiguration)
+        setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
         //cara menentukan bottom navbar ada di fragment mana aja

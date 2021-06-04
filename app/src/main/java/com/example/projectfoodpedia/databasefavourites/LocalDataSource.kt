@@ -2,6 +2,7 @@ package com.example.projectfoodpedia.databasefavourites
 
 import kotlinx.coroutines.flow.Flow
 
+// Digunakan untuk penyimpanan data ketika aplikasi sedang running
 class LocalDataSource(private val favouritesDao: FavouritesDao) {
 
     suspend fun addFavourites(mealsEntity: List<MealsEntity>) = favouritesDao.addFavourites(mealsEntity)

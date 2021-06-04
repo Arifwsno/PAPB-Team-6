@@ -16,6 +16,9 @@ data class MealResponse(
     val picture: String
 ) : Parcelable
 
+/* dikarenakan konten didalam Array JSON yang diinginkan dibungkus oleh array "meals",
+* maka di inisialisasikan data class ListMealResponse yang membuka array tersebut agar bisa didapatkan
+* variabel-variabel pada data class MealResponse diatas */
 data class ListMealResponse(
     @SerializedName("meals")
     val meals: ArrayList<MealResponse>

@@ -4,7 +4,7 @@ import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
-@Parcelize
+@Parcelize // Merupakan entitas yang menyimpan data dari API dengan end-point details
 data class MealDetailsModel(
         val id: String,
 

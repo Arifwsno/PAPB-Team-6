@@ -8,8 +8,9 @@ import com.example.projectfoodpedia.datamakanan.model.CategoryModel
 import com.example.projectfoodpedia.datamakanan.model.MealDetailsModel
 import com.example.projectfoodpedia.datamakanan.model.MealModel
 
-//Buat clean architecture
+
 object DataMapper {
+    // Mengaolkasikan data dari response (API) ke domain (Data module)
     fun mapCategoryResponsesToDomain(input: List<CategoryResponse>): List<CategoryModel> {
         val categoryList = ArrayList<CategoryModel>()
         input.map {
@@ -36,6 +37,12 @@ object DataMapper {
         return mealList
     }
 
+    /* Alasan mengapa data dialokasikan 2 kali dari response ke entity kemudian dari entity ke
+    * domain, karena terdapat fungsi favourite. Data akan masukan ke table [favourite_table], kemudian
+    * variabel pada tabel akan dialokasikan lagi dimana sekarang List data sudah terdapat variabel
+    * isFavourite yang dapat di manipulasi untuk keperluan status favourite makanan */
+
+    // Mengalokasikan data dari response (API) ke entities (ROOM Database)
     fun mapMealDetailsResponseToEntity(input: List<MealDetailsResponse>): List<MealsEntity> {
         val detailList = ArrayList<MealsEntity>()
         input.map {
@@ -52,6 +59,7 @@ object DataMapper {
         return detailList
     }
 
+    // Mengalokasikan data dari entities (ROOM Database) ke response (API)
     fun mapMealDetailEntitiesToDomains(input: List<MealsEntity>): List<MealDetailsModel> =
             input.map {
                 MealDetailsModel(
@@ -63,6 +71,7 @@ object DataMapper {
                         isFavourite = it.isFavourite
                 )
             }
+
 
     fun mapMealDetailEntityToDomain(input: MealsEntity?) = MealDetailsModel(
             id = input?.id ?: "",

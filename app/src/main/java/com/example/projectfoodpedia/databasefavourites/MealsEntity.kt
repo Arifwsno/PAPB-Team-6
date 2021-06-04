@@ -3,6 +3,7 @@ package com.example.projectfoodpedia.databasefavourites
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+// Inisialiasi table beserta kolomnya
 @Entity(tableName = "favourite_table")
 data class MealsEntity(
         @PrimaryKey
