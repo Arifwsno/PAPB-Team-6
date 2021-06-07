@@ -7,12 +7,20 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:944220471376:android:f05839495fd3d8c0169155",
+        "mobilesdk_app_id": "1:944220471376:android:939568d0cd210191169155",
         "android_client_info": {
           "package_name": "com.example.projectfoodpedia"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "944220471376-vt39jhjiu4u4ob78t3pdl59rcj6c6l7h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.projectfoodpedia",
+            "certificate_hash": "7df49726aca92d3b79cdefe3b8242478c0cc8dfa"
+          }
+        },
         {
           "client_id": "944220471376-k4v6igsqhmo3a171qmh093logen0hpqg.apps.googleusercontent.com",
           "client_type": 3

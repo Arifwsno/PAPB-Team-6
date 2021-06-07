@@ -7,6 +7,7 @@ import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -24,7 +25,6 @@ import kotlinx.android.synthetic.main.fragment_food_details.*
 import org.koin.android.viewmodel.ext.android.getViewModel
 import org.koin.core.parameter.parametersOf
 
-
 class FoodDetailsFragment : Fragment() {
 
     private val args: FoodDetailsFragmentArgs by navArgs()
@@ -40,8 +40,8 @@ class FoodDetailsFragment : Fragment() {
 
     var status = false
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         dataBinding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_food_details, container, false)
@@ -51,33 +51,41 @@ class FoodDetailsFragment : Fragment() {
                 activity?.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         val notificationIntent = Intent(activity, LauncherActivity::class.java)
         val pendingIntent = PendingIntent.getActivity(
-                activity,
-                0,
-                notificationIntent,
-                PendingIntent.FLAG_UPDATE_CURRENT
+            activity,
+            0,
+            notificationIntent,
+            PendingIntent.FLAG_UPDATE_CURRENT
         )
 
         // Notification action
-//        dataBinding.btnNotification.setOnClickListener {
-//            notificationChannel = NotificationChannel(
-//                    channelID,
-//                    description,
-//                    NotificationManager.IMPORTANCE_HIGH
-//            )
-//            notificationChannel.enableLights(true)
-//            notificationChannel.lightColor = Color.BLUE
-//            notificationChannel.enableVibration(false)
-//            notificationManager.createNotificationChannel(notificationChannel)
-//
-//            builder = Notification.Builder(activity, channelID)
-//                    .setContentTitle(tv_foodDetailsTitle.text.toString())
-//                    .setContentText("Your food is ready!")
-//                    .setSmallIcon(R.drawable.ic_launcher_round)
-//                    .setLargeIcon(BitmapFactory.decodeResource(this.resources, R.drawable.ic_launcher))
-//                    .setContentIntent(pendingIntent)
-//
-//            notificationManager.notify(1234, builder.build())
-//        }
+        dataBinding.btnNotification.setOnClickListener {
+            notificationChannel = NotificationChannel(
+                channelID,
+                description,
+                NotificationManager.IMPORTANCE_HIGH
+            )
+            notificationChannel.enableLights(true)
+            notificationChannel.lightColor = Color.BLUE
+            notificationChannel.enableVibration(false)
+            notificationManager.createNotificationChannel(notificationChannel)
+
+            builder = Notification.Builder(activity, channelID)
+                    .setContentTitle(tv_foodDetailsTitle.text.toString())
+                    .setContentText("Your food is ready!")
+                    .setSmallIcon(R.drawable.ic_launcher_round)
+                    .setLargeIcon(
+                        BitmapFactory.decodeResource(
+                            this.resources,
+                            R.drawable.ic_launcher
+                        )
+                    )
+                    .setContentIntent(pendingIntent)
+
+            Handler().postDelayed(
+            Runnable { notificationManager.notify(1234, builder.build()) },
+            2000
+            )
+        }
 
         var categoryMeal = args.meal.id
         viewModel = getViewModel { parametersOf(categoryMeal) }

@@ -11,6 +11,8 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.ktx.Firebase
 
 
 class MainActivity : AppCompatActivity() {
@@ -18,7 +20,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_main)
         navController = Navigation.findNavController(this, R.id.fragment)
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
@@ -34,7 +35,10 @@ class MainActivity : AppCompatActivity() {
                 R.id.favouriteDetailFragment,
                 R.id.foodDetailsFragment,
                 R.id.menuFragment -> navView.visibility = View.GONE
+                R.id.welcomePage -> navView.visibility = View.GONE
+                R.id.login -> navView.visibility = View.GONE
                 else -> navView.visibility = View.VISIBLE
+
             }
         }
     }
