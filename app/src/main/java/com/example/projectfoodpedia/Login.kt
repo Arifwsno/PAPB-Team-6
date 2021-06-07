@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation
 import com.example.projectfoodpedia.utils.FirebaseUtils
 import com.example.projectfoodpedia.utils.FirebaseUtils.firebaseAuth
@@ -30,6 +31,7 @@ class Login : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
         return inflater.inflate(R.layout.fragment_login, container, false)
     }
 

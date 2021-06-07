@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/menuFragment"
         android:name="com.example.projectfoodpedia.MenuFragment"
-        android:label="fragment_menu"
+        android:label="Menu"
         tools:layout="@layout/fragment_menu" >
         <action
             android:id="@+id/actionMenuToDetail"
@@ -20,7 +20,7 @@
     <fragment
         android:id="@+id/foodDetailsFragment"
         android:name="com.example.projectfoodpedia.FoodDetailsFragment"
-        android:label="fragment_food_details"
+        android:label="Resep Masakan"
         tools:layout="@layout/fragment_food_details" >
         <argument
             android:name="meal"
@@ -30,7 +30,8 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.projectfoodpedia.HomeFragment"
-        android:label="HomeFragment" >
+        android:label="Pilih Kategori Makanan"
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/actionHomeToMenu"
             app:destination="@id/menuFragment" />
@@ -41,7 +42,7 @@
     <fragment
         android:id="@+id/favouritesFragment"
         android:name="com.example.projectfoodpedia.FavouritesFragment"
-        android:label="fragment_favourites"
+        android:label="Resep Favoritmu"
         tools:layout="@layout/fragment_favourites" >
         <action
             android:id="@+id/actionFavouriteToFavouritesDetails"
@@ -50,7 +51,7 @@
     <fragment
         android:id="@+id/favouriteDetailFragment"
         android:name="com.example.projectfoodpedia.FavouritesDetailsFragment"
-        android:label="fragment_blank"
+        android:label="Resep Masakan"
         tools:layout="@layout/fragment_favourites_details" >
         <argument
             android:name="meal"
@@ -59,17 +60,16 @@
     <fragment
         android:id="@+id/profile"
         android:name="com.example.projectfoodpedia.profile"
-        android:label="fragment_profile"
+        android:label="Profil"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/notification"
         android:name="com.example.projectfoodpedia.notification"
-        android:label="fragment_notification"
+        android:label="Notifikasi"
         tools:layout="@layout/fragment_notification" />
     <fragment
         android:id="@+id/splashscreen"
         android:name="com.example.projectfoodpedia.Splashscreen"
-        android:label="fragment_splashscreen"
         tools:layout="@layout/fragment_splashscreen" >
         <action
             android:id="@+id/action_splashscreen_to_homeFragment"
@@ -81,7 +81,6 @@
     <fragment
         android:id="@+id/welcomePage"
         android:name="com.example.projectfoodpedia.WelcomePage"
-        android:label="fragment_welcome_page"
         tools:layout="@layout/fragment_welcome_page" >
         <action
             android:id="@+id/action_welcomePage_to_signup"
@@ -93,7 +92,6 @@
     <fragment
         android:id="@+id/signup"
         android:name="com.example.projectfoodpedia.Signup"
-        android:label="fragment_signup"
         tools:layout="@layout/fragment_signup" >
         <action
             android:id="@+id/action_signup_to_login"
@@ -102,7 +100,6 @@
     <fragment
         android:id="@+id/login"
         android:name="com.example.projectfoodpedia.Login"
-        android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_login_to_homeFragment"
