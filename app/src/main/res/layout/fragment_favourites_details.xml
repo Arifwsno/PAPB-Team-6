@@ -93,7 +93,7 @@
                 android:paddingRight="0dp"
                 android:paddingBottom="0dp"
                 android:padding="4dp"
-                android:backgroundTint="@color/light_orange"
+                android:backgroundTint="@color/red"
                 android:outlineSpotShadowColor="@android:color/transparent"
                 android:outlineAmbientShadowColor="@android:color/transparent"
                 android:text="@string/favorite"

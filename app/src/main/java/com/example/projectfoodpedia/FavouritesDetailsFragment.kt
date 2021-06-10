@@ -61,7 +61,7 @@ class FavouritesDetailsFragment : Fragment() {
         }
         else{
             Toast.makeText(requireContext(), "Succesfully Removed!", Toast.LENGTH_LONG).show()
-            DrawableCompat.setTint(buttonDrawable, Color.CYAN)
+            DrawableCompat.setTint(buttonDrawable, Color.GREEN)
             fab_favouritesFavourites.setBackground(buttonDrawable)
         }
     }

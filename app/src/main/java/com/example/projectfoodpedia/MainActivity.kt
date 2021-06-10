@@ -13,10 +13,13 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.ktx.Firebase
+import okio.Timeout
 
 
 class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
+    private var splashScreenTimeout=2000;
+//    After completion of 2000 ms, the next activity will get started.
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,8 +37,10 @@ class MainActivity : AppCompatActivity() {
             when(nd.id){
                 R.id.favouriteDetailFragment,
                 R.id.foodDetailsFragment,
-                R.id.menuFragment -> navView.visibility = View.GONE
-                R.id.welcomePage -> navView.visibility = View.GONE
+                R.id.menuFragment,
+                R.id.splashscreen,
+                R.id.welcomePage,
+                R.id.signup,
                 R.id.login -> navView.visibility = View.GONE
                 else -> navView.visibility = View.VISIBLE
 

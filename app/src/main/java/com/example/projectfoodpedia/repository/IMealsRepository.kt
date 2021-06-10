@@ -2,10 +2,6 @@ package com.example.projectfoodpedia.repository
 
 
 
-import com.example.projectfoodpedia.datamakanan.CategoryResponse
-import com.example.projectfoodpedia.datamakanan.ListCategoryResponse
-import com.example.projectfoodpedia.datamakanan.ListMealResponse
-import com.example.projectfoodpedia.datamakanan.MealResponse
 import com.example.projectfoodpedia.datamakanan.model.CategoryModel
 import com.example.projectfoodpedia.datamakanan.model.MealDetailsModel
 import com.example.projectfoodpedia.datamakanan.model.MealModel
