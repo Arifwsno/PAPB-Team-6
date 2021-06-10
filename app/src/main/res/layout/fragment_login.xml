@@ -127,14 +127,27 @@
 
             <!--link to login-->
             <TextView
-                android:id="@+id/tv_linkToSignupText"
+                android:id="@+id/tv_hintEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@id/btn_login"
                 android:layout_marginTop="12dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:text="Belum punya akun? Daftar sekarang!"
+                android:text="Email: arifws@gmail.com"
+                android:fontFamily="@font/barlow_semibold"
+                android:textSize="12sp"
+                android:textColor="@color/dark_yellow"/>
+
+            <TextView
+                android:id="@+id/tv_hintPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv_hintEmail"
+                android:layout_marginTop="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="Kata Sandi: perangkatlunak"
                 android:fontFamily="@font/barlow_semibold"
                 android:textSize="12sp"
                 android:textColor="@color/dark_yellow"/>
